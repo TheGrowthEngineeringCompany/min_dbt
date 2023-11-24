@@ -1,0 +1,33 @@
+default:
+  target: dev-bigquery
+  outputs:
+    dev-bigquery:
+      dataset: ${BIGQUERY_DEV_DATASET}
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      location: EU
+      method: oauth
+      priority: interactive
+      project: ${BIGQUERY_PROJECT}
+      threads: 12
+      type: bigquery
+    dev-snowflake:
+      type: snowflake
+      user: ${SNOWFLAKE_USER}
+      password: ${SNOWFLAKE_PW}
+      account: ${SNOWFLAKE_ACCOUNT}
+      role: ${SNOWFLAKE_ROLE}
+      database: ${SNOWFLAKE_DEV_DATABASE}
+      schema: ${SNOWFLAKE_DEV_SCHEMA}
+      warehouse: ${SNOWFLAKE_DEV_WAREHOUSE}
+      threads: 4
+    dev-redshift:
+      type: redshift
+      host: ${REDSHIFT_HOST}
+      user: ${REDSHIFT_USER}
+      password: ${REDSHIFT_PW}
+      port: 5439
+      dbname: ${REDSHIFT_DEV_DATABASE}
+      schema: ${REDSHIFT_DEV_SCHEMA}
+      threads: 4
+      connect_timeout: 30 # optional, number of seconds before connection times out
