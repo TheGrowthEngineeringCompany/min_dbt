@@ -1,3 +1,3 @@
 packages:
   - git: https://github.com/TheGrowthEngineeringCompany/dbt-reconfigured
-    revision: 0.1.5
+    revision: 0.1.6
